@@ -1,6 +1,15 @@
+DROP TABLE IF EXISTS tb_analise_final_credito;
+
 CREATE TABLE tb_analise_final_credito AS
 SELECT 
-    status_credito,
+    CASE 
+        WHEN status_credito = 1 THEN 'Bom'
+        WHEN status_credito = 2 THEN 'Ruim'
+    END AS desc_status_credito,
+    CASE 
+        WHEN status_credito = 2 THEN 1 
+        ELSE 0
+    END AS status_credito,
     valor_credito,
     idade,
     CASE 
@@ -26,4 +35,5 @@ SELECT
         ELSE 'Outros'
     END AS categoria_finalidade
 FROM credit_data_pt;
+
 
