@@ -73,3 +73,5 @@ Abaixo estão exemplos das principais métricas calculadas diretamente no banco 
 📌 Próximo passo do projeto
 
 Consolidação dos principais indicadores em **dashboards no Power BI**, com foco em monitoramento de inadimplência, exposição ao risco e suporte à tomada de decisão.
+
+Desenvolvido por: Camila Neri.
