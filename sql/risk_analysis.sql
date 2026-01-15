@@ -60,4 +60,9 @@ FROM credit_data_pt
 GROUP BY faixa_etaria
 ORDER BY taxa_inadimplencia_perc DESC;
 
-SELECT * FROM tb_analise_final_credito LIMIT 10;
+SELECT 
+    desc_status_credito, 
+    status_credito, 
+    COUNT(*) AS quantidade
+FROM tb_analise_final_credito
+GROUP BY desc_status_credito, status_credito;
