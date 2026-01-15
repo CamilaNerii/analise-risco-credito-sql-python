@@ -22,7 +22,7 @@ conn = sqlite3.connect(db_path)
 df.to_sql(
     'german_credit_data',
     conn,
-    if_exists='append',  
+    if_exists='replace',  
     index=False
 )
 
