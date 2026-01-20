@@ -43,3 +43,22 @@ WHERE faixa_etaria = '41-60 anos'
   AND status_credito = 0 
 ORDER BY valor_credito DESC
 LIMIT 5;
+
+SELECT 
+    tipo_moradia,
+    COUNT(*) AS total_clientes,
+    SUM(CASE WHEN status_credito = 0 THEN 1 ELSE 0 END) AS total_inadimplentes,
+    ROUND(AVG(CASE WHEN status_credito = 0 THEN 1.0 ELSE 0.0 END) * 100, 2) AS taxa_inadimplencia_perc
+FROM tb_analise_final_credito
+GROUP BY tipo_moradia
+ORDER BY taxa_inadimplencia_perc DESC;
+
+SELECT 
+    faixa_etaria,
+    COUNT(*) AS total_clientes,
+    ROUND(AVG(CASE WHEN status_credito = 0 THEN 1.0 ELSE 0.0 END) * 100, 2) AS taxa_inadimplencia_perc,
+    ROUND(AVG(valor_credito), 2) AS ticket_medio
+FROM tb_analise_final_credito
+WHERE tipo_moradia = 'Alugada'
+GROUP BY faixa_etaria
+ORDER BY taxa_inadimplencia_perc DESC;
