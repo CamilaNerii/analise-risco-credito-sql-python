@@ -3,7 +3,7 @@
 Este projeto apresenta uma análise diagnóstica de risco para subsidiar decisões de concessão de crédito. A metodologia utiliza **SQL** para processamento e validação de dados, integrada ao **Power BI** para detecção de anomalias e visualização de indicadores de performance (KPIs).
 
 <div align="center">
-  <img src="dashboard/preview.png" alt="Dashboard de Risco de Crédito" width="100%">
+  <img src="docs/preview.png" alt="Dashboard de Risco de Crédito" width="100%">
 </div>
 
 ## 🚀 Etapas do Projeto
