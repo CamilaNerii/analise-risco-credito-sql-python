@@ -2,7 +2,9 @@
 
 Este projeto apresenta uma análise diagnóstica de risco para subsidiar decisões de concessão de crédito. A metodologia utiliza **SQL** para processamento e validação de dados, integrada ao **Power BI** para detecção de anomalias e visualização de indicadores de performance (KPIs).
 
-![Visualização do Dashboard](dashboard/preview.png)
+<div align="center">
+  <img src="docs/preview.png" alt="Dashboard de Risco de Crédito" width="100%">
+</div>
 
 ## 🚀 Etapas do Projeto
 
@@ -22,7 +24,7 @@ Este projeto apresenta uma análise diagnóstica de risco para subsidiar decisõ
 
 Durante a etapa de visualização, identificou-se uma anomalia crítica através do cruzamento de variáveis habitacionais e etárias:
 
-* **Detecção:** Clientes entre **41-60 anos em Moradia Gratuita** apresentam uma taxa de inadimplência de **48,9%**, superando grupos historicamente mais voláteis.
+* **Detecção:** Clientes entre **41-60 anos em Moradia Gratuita** apresentam uma taxa de inadimplência de **41,1%**, superando grupos historicamente mais voláteis.
 * **Causa Raiz (Validada via SQL):** Identificou-se que o banco aprovou para este nicho um **Ticket Médio 85% superior** à média da carteira, especificamente para a aquisição de **Veículos Novos (72,7% de default)**.
 * **Conclusão Técnica:** A ausência de colateral (imóvel próprio) somada a uma exposição financeira elevada (alavancagem excessiva) resultou em uma severa deterioração da qualidade do crédito neste segmento.
 
@@ -38,7 +40,7 @@ Durante a etapa de visualização, identificou-se uma anomalia crítica através
 * `/database`: Ambiente SQLite e esquemas de tabelas.
 * `/sql`: Consultas de tratamento e análise diagnóstica.
 * `/scripts`: Código em Python para automação da carga.
-* `/dashboard`: Arquivo `.pbix` e preview do dashboard.
+* `/dashboard`: Arquivo `.pbix` e imagem de visualização do painel.
 
 ## 📌 Próximos Passos
 
