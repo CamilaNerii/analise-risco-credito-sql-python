@@ -4,6 +4,8 @@ Este projeto apresenta uma análise diagnóstica de risco para subsidiar decisõ
 
 <div align="center">
   <img src="docs/preview.png" alt="Dashboard de Risco de Crédito" width="100%">
+  <br>
+  <p>🎥 <a href="https://www.linkedin.com/feed/update/urn:li:activity:7419725523129409537/"><b>Clique aqui para ver a demonstração em vídeo da interatividade no LinkedIn</b></a></p>
 </div>
 
 ## 🚀 Etapas do Projeto
