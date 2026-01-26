@@ -2,7 +2,7 @@
 
 > **Status do Projeto:** ✅ Concluído
 
-![Dashboard Power BI](preview.png)
+![Dashboard Power BI](docs/preview.png)
 *(Visão geral do painel de monitoramento de risco desenvolvido no Power BI)*
 
 ---
@@ -55,7 +55,7 @@ Em crédito, o erro mais oneroso não é negar um bom cliente (Custo de Oportuni
 ### Matriz de Confusão
 *(Visualização da performance do modelo na identificação de riscos)*
 
-![Matriz de Confusão](matriz_da_confusao.png)
+![Matriz de Confusão](docs/matriz_da_confusao.png)
 
 ---
 
