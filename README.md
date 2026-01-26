@@ -1,53 +1,61 @@
-# 💳 Análise de Risco de Crédito | Gestão de Carteira German Credit
+# 💳 Análise de Risco de Crédito | SQL, Power BI & Machine Learning
 
-Este projeto apresenta uma análise diagnóstica de risco para subsidiar decisões de concessão de crédito. A metodologia utiliza **SQL** para processamento e validação de dados, integrada ao **Power BI** para detecção de anomalias e visualização de indicadores de performance (KPIs).
+> **Status do Projeto:** ✅ Concluído
 
-<div align="center">
-  <img src="docs/preview.png" alt="Dashboard de Risco de Crédito" width="100%">
-  <br>
-  <p>🎥 <a href="https://www.linkedin.com/feed/update/urn:li:activity:7419725523129409537/"><b>Clique aqui para ver a demonstração em vídeo da interatividade no LinkedIn</b></a></p>
-</div>
+Este projeto apresenta uma solução completa ("End-to-End") para **subsidiar decisões de concessão de crédito**. A metodologia integra **SQL e Power BI** para o diagnóstico de carteira (KPIs e anomalias) e avança para **Python (Machine Learning)** com a construção de um modelo preditivo para identificar inadimplência.
 
-## 🚀 Etapas do Projeto
+🎥 [https://www.linkedin.com/feed/update/urn:li:activity:7419725523129409537/](#)
 
-* **Ingestão de Dados:** Script em Python para automatizar a carga do dataset bruto em um banco SQLite.
-* **Tratamento e Padronização:** Limpeza dos dados e tradução de variáveis técnicas para o português utilizando SQL.
-* **Análise Diagnóstica:** Utilização de queries SQL para validação de hipóteses e segmentação de risco por perfil do cliente.
-* **Data Visualization:** Construção de dashboard interativo no Power BI para monitoramento de KPIs e identificação visual de clusters de risco.
+## 🚀 Evolução do Projeto (Ciclo SEMMA)
 
-## 📊 Principais Indicadores e Resultados
+1.  **Ingestão de Dados:** Script em Python para automatizar a carga do dataset bruto em um banco SQLite.
+2.  **Análise Diagnóstica (SQL & Power BI):** Validação de hipóteses e identificação de perfis de risco históricos.
+3.  **Modelagem Preditiva (Python):** Treinamento de algoritmo de Machine Learning para calcular a probabilidade de default.
+
+---
+
+## 📊 Parte 1: Análise Descritiva & Diagnóstica
+*Principais insights extraídos via SQL e Power BI:*
 
 * **Taxa Global de Inadimplência:** 30,0%.
-* **Segmento Crítico:** A categoria **Educação** registra o maior índice de risco (**44,0%**).
-* **Fator Etário:** Clientes entre 18–24 anos (41,3%) apresentam o dobro do risco de clientes 60+ (22,2%).
-* **Preditores de Solvência:** Clientes com **casa própria** apresentaram a menor taxa de inadimplência (**26,1%**), confirmando a estabilidade residencial como indicador de baixo risco.
+* **Segmento Crítico:** A categoria **Educação** registra o maior índice de risco (44,0%).
+* **Anomalia Detectada:** Clientes entre 41-60 anos em "Moradia Gratuita" apresentaram taxa de default de **41,1%**. A causa raiz (investigada via SQL) foi a aprovação de Ticket Médio 85% superior para compra de veículos novos sem colateral (garantia).
 
-## 🔍 Investigação de Anomalia na Política de Concessão
+---
 
-Durante a etapa de visualização, identificou-se uma anomalia crítica através do cruzamento de variáveis habitacionais e etárias:
+## 🤖 Parte 2: Modelagem Preditiva
+*Utilizando Python e Scikit-learn, desenvolvi um classificador Random Forest focado em mitigar a exposição ao risco.*
 
-* **Detecção:** Clientes entre **41-60 anos em Moradia Gratuita** apresentam uma taxa de inadimplência de **41,1%**, superando grupos historicamente mais voláteis.
-* **Causa Raiz (Validada via SQL):** Identificou-se que o banco aprovou para este nicho um **Ticket Médio 85% superior** à média da carteira, especificamente para a aquisição de **Veículos Novos (72,7% de default)**.
-* **Conclusão Técnica:** A ausência de colateral (imóvel próprio) somada a uma exposição financeira elevada (alavancagem excessiva) resultou em uma severa deterioração da qualidade do crédito neste segmento.
+### 🎯 O Desafio de Negócio
+Em crédito, o erro mais oneroso não é negar um bom cliente (Custo de Oportunidade), mas aprovar um cliente que entrará em default (Perda Financeira Direta). Por isso, o modelo foi otimizado para maximizar o **Recall da classe de Inadimplentes**.
+
+### 📈 Resultados do Modelo (Random Forest)
+Após balanceamento de classes e tuning de hiperparâmetros (limitando a profundidade para evitar overfitting):
+
+* **Recall (Eficiência na detecção de Risco):** **64%**
+    * *Interpretação:* De cada 100 casos reais de inadimplência, o modelo identifica corretamente 64, prevenindo a concessão do crédito.
+* **Feature Importance (Insight do Modelo):**
+    * Diferente da análise diagnóstica inicial, que focava em Idade/Moradia, o modelo revelou que o **Valor do Crédito** e a **Duração do Empréstimo** são os preditores matemáticos mais fortes de risco.
+
+### Matriz de Confusão
+*(O modelo prioriza a segurança: alta detecção de maus pagadores, aceitando um trade-off controlado de falsos positivos)*
+
+![Matriz de Confusão](matriz_da_confusao.png)
+
+---
 
 ## 🛠 Stack Tecnológica
 
-* **SQL (SQLite):** Engenharia de dados e validação técnica de hipóteses.
-* **Power BI & DAX:** Dashboards interativos e medidas de performance.
-* **Python:** Automação da carga e tratamento inicial de dados.
+* **Python:** Pandas, Scikit-learn, Matplotlib/Seaborn (Machine Learning e ETL).
+* **SQL (SQLite):** Engenharia de dados e validação de hipóteses.
+* **Power BI:** Dashboard interativo para monitoramento de KPIs.
 
 ## 📂 Estrutura do Repositório
 
-* `/data`: Base de dados original (CSV).
-* `/database`: Ambiente SQLite e esquemas de tabelas.
+* `/data`: Base de dados original.
 * `/sql`: Consultas de tratamento e análise diagnóstica.
-* `/scripts`: Código em Python para automação da carga.
-* `/dashboard`: Arquivo `.pbix` e imagem de visualização do painel.
-
-## 📌 Próximos Passos
-
-* Desenvolvimento de um modelo de **Machine Learning (Classificação)** para cálculo da **Probabilidade de Default (PD)**.
-* Implementação de uma **Matriz de Confusão** para avaliar a sensibilidade e precisão do modelo na identificação de clientes de alto risco.
+* `/notebooks`: Jupyter Notebooks com a Análise Exploratória e o Modelo de ML.
+* `/dashboard`: Arquivo `.pbix` do Power BI.
 
 ---
-**Desenvolvido por:** Camila Neri.
+**Desenvolvido por:** Camila Neri
