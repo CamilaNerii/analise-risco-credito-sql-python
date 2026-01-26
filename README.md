@@ -55,7 +55,7 @@ Em crédito, o erro mais oneroso não é negar um bom cliente (Custo de Oportuni
 ### Matriz de Confusão
 *(Visualização da performance do modelo na identificação de riscos)*
 
-![Matriz de Confusão](matriz_confusao.png)
+![Matriz de Confusão](matriz_da_confusao.png)
 
 ---
 
