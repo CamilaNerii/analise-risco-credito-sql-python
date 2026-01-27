@@ -2,8 +2,6 @@
 
 Este projeto apresenta uma solução completa ("End-to-End") para **subsidiar decisões de concessão de crédito**. A metodologia integra **SQL e Power BI** para o diagnóstico de carteira (KPIs e anomalias) e avança para **Python (Machine Learning)** com a construção de um modelo preditivo para identificar inadimplência.
 
-🎥 **[Clique aqui para ver a demonstração em vídeo no LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7419725523129409537/)**
-
 ---
 
 ## 🚀 Evolução do Projeto
@@ -19,12 +17,14 @@ Este projeto apresenta uma solução completa ("End-to-End") para **subsidiar de
 
 * **Taxa Global de Inadimplência:** 30,0%.
 * **Segmento Crítico:** A categoria **Educação** registra o maior índice de risco (44,0%).
-* **Anomalia Detectada:** Clientes entre 41-60 anos em "Moradia Gratuita" apresentaram taxa de default de **41,1%** devido à aprovação de Ticket Médio alto sem garantia.
+* **Anomalia Detectada:** Clientes entre 41-60 anos em "Moradia Gratuita" apresentaram taxa de default de **41,1%**.
 
 <div align="center">
   <img src="preview.png" alt="Dashboard Power BI" width="800"/>
   <br>
   <em>Visão geral do painel de monitoramento de risco desenvolvido no Power BI</em>
+  <br><br>
+  🎥 <strong><a href="COLOQUE_AQUI_O_LINK_DO_SEU_VIDEO_NO_LINKEDIN">Clique aqui para ver a demonstração em vídeo no LinkedIn</a></strong>
 </div>
 
 ---
