@@ -20,7 +20,7 @@ Este projeto apresenta uma solução completa ("End-to-End") para **subsidiar de
 * **Anomalia Detectada:** Clientes entre 41-60 anos em "Moradia Gratuita" apresentaram taxa de default de **41,1%**.
 
 <div align="center">
-  <img src="preview.png" alt="Dashboard Power BI" width="800"/>
+  <img src="docs/preview.png" alt="Dashboard Power BI" width="800"/>
   <br>
   <em>Visão geral do painel de monitoramento de risco desenvolvido no Power BI</em>
   <br><br>

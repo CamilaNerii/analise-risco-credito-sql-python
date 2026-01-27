@@ -1,2 +1,4 @@
 *.sql linguist-detectable=true
 *.db linguist-generated=true
+
+*.ipynb linguist-language=Python
